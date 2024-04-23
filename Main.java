@@ -1,7 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        int length = 100000;
+        int length = 1000000;
         int threads = 8;
+
+        Timer timer = new Timer();
+        timer.start();
 
         ArrayFill arrayFill = new ArrayFill();
 
@@ -19,6 +22,10 @@ public class Main {
         MinResultFinder minResultFinder = new MinResultFinder(minFinderThreads);
         int min = minResultFinder.findMin();
         int minIndex = minResultFinder.findMinIndex();
+
+        timer.stop();
+        long timeElapsed = timer.getTimeElapsed();
+        System.out.println("work time: " + timeElapsed + " ms");
 
         System.out.println("minimal " + min + ": index " + minIndex);
     }

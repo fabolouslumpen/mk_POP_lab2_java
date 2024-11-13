@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        int length = 1000000;
+        int length = 100000000;
         int threads = 8;
 
         Timer timer = new Timer();
